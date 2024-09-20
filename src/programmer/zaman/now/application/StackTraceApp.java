@@ -3,6 +3,14 @@ package programmer.zaman.now.application;
 public class StackTraceApp {
     public static void main(String[] args) {
         try {
+            sampleError();
+        } catch ( RuntimeException exception ) {
+            exception.printStackTrace();
+        }
+    }
+
+    public static void sampleError() {
+        try {
             String[] names = {
                     "Sony",
                     "Darmawan"
@@ -10,9 +18,7 @@ public class StackTraceApp {
 
             System.out.println(names[100]);
         } catch ( Throwable throwable ) {
-            StackTraceElement[] stackTraceElement = throwable.getStackTrace();
-
-            throwable.printStackTrace();
+            throw new RuntimeException(throwable);
         }
     }
 }
