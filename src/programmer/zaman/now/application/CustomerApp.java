@@ -17,5 +17,10 @@ public class CustomerApp {
 
         Level level = Level.valueOf("PREMIUM");
         System.out.println(level);
+
+        System.out.println("Print Level:");
+        for (var value : Level.values()) {
+            System.out.println(value);
+        }
     }
 }
